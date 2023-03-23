@@ -13,7 +13,7 @@ async function bootstrap() {
     .setDescription('Aplicação para gestão de usuários')
     .setVersion('1.0.0')
     .addTag('status')
-    .addTag('Users')
+    .addTag('user')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
