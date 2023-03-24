@@ -4,13 +4,15 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+		cors: true,
+	});
 
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
     .setTitle('UserManagament')
-    .setDescription('Aplicação para gestão de usuários')
+    .setDescription('User management application')
     .setVersion('1.0.0')
     .addTag('status')
     .addTag('auth')

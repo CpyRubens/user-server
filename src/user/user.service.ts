@@ -37,7 +37,7 @@ export class UserService {
     });
 
     if (!record) {
-      throw new NotFoundException(`Registro com o ID '${id}' não encontrado.`);
+      throw new NotFoundException(`Record with ID '${id}' not found.`);
     }
 
     return record;
@@ -49,7 +49,7 @@ export class UserService {
 
   async create(dto: CreateUserDto): Promise<User> {
     if (dto.password != dto.confirmPassword) {
-      throw new BadRequestException('As senhas informadas não são iguais.');
+      throw new BadRequestException('passwords are not the same.');
     }
 
     delete dto.confirmPassword;
@@ -72,7 +72,7 @@ export class UserService {
 
     if (dto.password) {
       if (dto.password != dto.confirmPassword) {
-        throw new BadRequestException('As senhas informadas não são iguais.');
+        throw new BadRequestException('The entered passwords are not the same.');
       }
     }
 
@@ -108,7 +108,7 @@ export class UserService {
     }
 
     throw new UnprocessableEntityException(
-      lastErrorLine || 'Algum erro ocorreu ao executar a operação',
+      lastErrorLine || 'Bad request',
     );
   }
 }
