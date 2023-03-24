@@ -23,7 +23,7 @@ export class UserController {
 
   @Post()
   @ApiOperation({
-    summary: 'Criar um usuário',
+    summary: 'create a user',
   })
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
@@ -31,7 +31,7 @@ export class UserController {
 
   @Get()
   @ApiOperation({
-    summary: 'Listar todos os usuários',
+    summary: 'show all users',
   })
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
@@ -41,7 +41,7 @@ export class UserController {
 
   @Get(':id')
   @ApiOperation({
-    summary: 'Visualizar um usuário pelo ID',
+    summary: 'View a User by ID',
   })
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
@@ -51,7 +51,7 @@ export class UserController {
 
   @Patch(':id')
   @ApiOperation({
-    summary: 'Editar um usuário pelo ID',
+    summary: 'Modify a User by ID',
   })
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
@@ -62,7 +62,7 @@ export class UserController {
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiOperation({
-    summary: 'Remover um usuário pelo ID',
+    summary: 'Remove a User by ID',
   })
   @UseGuards(AuthGuard())
   @ApiBearerAuth()

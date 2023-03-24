@@ -4,14 +4,14 @@ import { IsString, IsUrl, Matches, MinLength } from 'class-validator';
 export class CreateUserDto {
   @IsString()
   @ApiProperty({
-    description: 'Nome de usuário. Utilizado no login. Deve ser único',
+    description: 'User name. Used at login. must be unique',
     example: 'devilwint',
   })
   nickname: string;
 
   @IsString()
   @ApiProperty({
-    description: 'Nome do usuário. Apenas para exibição',
+    description: 'User name. Only for profile',
     example: 'Rubens Costa',
   })
   name: string;
@@ -22,20 +22,20 @@ export class CreateUserDto {
     message: 'Senha muito fraca',
   })
   @ApiProperty({
-    description: 'Senha do usuário para login',
+    description: 'User password to login',
     example: 'Abcd@1234',
   })
   password: string;
 
   @ApiProperty({
-    description: 'A confirmação da senha deve ser igual a senha',
+    description: 'Password confirmation must be the same as password',
     example: 'Abcd@1234',
   })
   confirmPassword: string;
 
   @IsUrl()
   @ApiProperty({
-    description: 'Imagem de perfil do usuário',
+    description: 'User profile picture',
     example: 'https://avatars.githubusercontent.com/u/61998884?v=4',
   })
   image: string;
